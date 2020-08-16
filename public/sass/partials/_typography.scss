@@ -1,0 +1,115 @@
+@font-face {
+  font-family: iranyekanbold;
+  font-display: swap;
+	font-style: normal;
+	font-weight: bold;
+	src: url('/fonts/iranyekanwebbold.woff2') format('woff2'), url('/fonts/iranyekanwebbold.woff') format('woff');
+}
+@font-face {
+  font-family: iranyekan300;
+  font-display: swap;
+	font-style: normal;
+	font-weight: 300;
+	src: url('/fonts/iranyekanweblight.woff2') format('woff2'), url('/fonts/iranyekanweblight.woff') format('woff');
+	}
+
+@font-face {
+  font-family: iranyekannormal;
+  font-display: swap;
+	font-style: normal;
+	font-weight: normal;
+	src: url('/fonts/iranyekanwebregular.woff2') format('woff2'),  url('/fonts/iranyekanwebregular.woff') format('woff')
+	}
+	
+/* Latin fonts (Roboto) */
+@font-face {
+  font-family: robotbold;
+  font-display: swap;
+	font-style: normal;
+	font-weight: bold;
+	src: url('/fonts/robotobold.woff2') format('woff2'),  url('/fonts/robotobold.woff') format('woff');
+}
+@font-face {
+  font-family: robot300;
+  font-display: swap;
+	font-style: normal;
+	font-weight: 300;
+	src: url('/fonts/robotolight.woff2') format('woff2'),  url('/fonts/robotolight.woff') format('woff');
+}
+@font-face {
+  font-family: robotnormal;
+  font-display: swap;
+	font-style: normal;
+	font-weight: normal;
+	src: url('/fonts/robotoregular.woff2') format('woff2'),  url('/fonts/robotoregular.woff') format('woff');
+}
+
+/* vazir fonts */
+@font-face {
+  font-family: Vazir;
+  font-display: swap;
+	font-style: normal;
+	font-weight: normal;
+	src: url('/fonts/Vazir.woff2') format('woff2'),  url('/fonts/Vazir.woff') format('woff');
+}
+	
+html {
+  font-size:10px;
+}
+
+body {
+  font-size:1.5rem;
+  color:$black;
+}
+
+h1.title {
+  font-size: 1.9rem;
+  font-family: $normalfont;
+  line-height: 1.4;
+  margin: 0;
+  font-weight: bold;
+  margin: 0.5em 1em;
+}
+
+h2 {
+  font-size: 2rem;
+  font-family: iranyekanbold;
+  margin: 0 1em;
+  font-weight: bold;
+}
+
+h3, h4, h5, h6 {
+  font-size: 5rem;
+  font-family: $boldfont;
+  font-weight: 600;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color:$black;
+}
+
+p a {
+  border-bottom: 2px solid $yellow;
+}
+
+p {
+  line-height: 2;
+  font-size: 1.6rem;
+  margin: 0;
+  padding: 0 1em;
+}
+
+.title--single {
+  max-width: 600px;
+  margin-top: -9rem;
+  font-size: 10rem;
+  text-align: center;
+}
+
+.ql-font-Vazir {
+  font-family: $vazir, $normalfonten;
+  font-size: .8em;
+}
+
