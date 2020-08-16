@@ -1,0 +1,28 @@
+extends ../layout
+
+block navbarTop
+	nav.navbar-top-container.fixed-header
+		a(href="/")
+			img.back(src=h.backArrow)
+			span بازگشت
+		span #{title}
+block content
+	.background-partial
+		.header-text
+			span اطلاعات کاربری
+		.dashboard-inner-details
+			.firsthand-details
+				img(src='/images/icons/man.svg')
+				span #{user.fullName}
+				span #{user.phoneNo}
+	.dashboard-box-anchors
+		ul.dashboard-unorder-list-anchors
+			each item in h.settingMenu
+				li.dashboard-items
+					a.dashboard-items-links(href=item.slug, class=(currentPath.startsWith(item.slug) ? 'navbar-menu-active' : ''))
+							!= h.dashboardSettings(item.icon)
+							span #{item.title}
+							
+block slideOutMenu
+block footer
+block navbar-bottom

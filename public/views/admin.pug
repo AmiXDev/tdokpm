@@ -1,0 +1,31 @@
+extends layout
+block navbarTop
+block content
+	ul.pages
+		li.chat.page
+			.container
+			.usersOnline
+				h1 مدیریت چت آنلاین آقای گوگل
+				ul.adminList#admins
+		li.login.page
+			.form
+				h3.title نام کاربری
+				input.usernameInput(type="text", maxlength="14")
+				h3.title رمز عبور
+				input.passwordInput#passwordInput(type="password", maxlength="10")
+				br
+				input.btnForadmin.btn(type='submit', value='ورود')
+		li.error.page(style="display: none;")
+			.form
+				h3.title اینترنت شما قطع شد در حال اتصال مجدد شما هستیم
+		audio#windowSound
+			source(src="/sounds/new_chat_window.mp3", type="audio/mpeg")
+		audio#chatSound
+			source(src="/sounds/new_message.mp3", type="audio/mpeg")
+		audio#pokeSound
+			source(src="/sounds/poke.mp3", type="audio/mpeg")
+block messages
+block slideOutMenu
+block live-chat
+block footer
+block navbar-bottom

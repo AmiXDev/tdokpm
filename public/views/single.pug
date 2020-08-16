@@ -1,0 +1,22 @@
+extends layout
+
+block content
+    .single-wrapper
+        .inner-wrapper
+            .dark-layout
+            img.featured-image(src=`${blogPosts.featuredPhotoLocation}`, alt=`${blogPosts.featuredImageAlt}`)
+            .single-author-name #{blogPosts.authors.fullName}
+            img.single-author-gravatar(src=`${blogPosts.authors.gravatar}`, alt=`${blogPosts.authors.fullName}`)
+            .hidden.createdDate.single-createdDate #{blogPosts.createdAt}
+        h1.title #{blogPosts.title}
+        != blogPosts.description
+
+block navbar-bottom
+        nav.navbar-bottom-container
+            ul.navbar-bottom-blog-unordered-list
+                each item in h.navbarBottomItemsForBlog
+                    li.navbar-bottom-blog-items
+                        a.navbar-bottom-blog-link(href=item.slug, class=(currentPath.startsWith(item.slug) ? 'navbar-bottom-active' : ''))
+                            != h.icon(item.icon)
+                            span #{item.title}
+block footer

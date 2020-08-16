@@ -1,0 +1,15 @@
+extends layout
+
+block content
+	each blogPost in blogPosts	
+		if blogPost.draftMode === false
+			section.preview-blog-post.grid-two-cols-one-row
+				h1.title
+					a(href=`/blog/${blogPost.slug}`) #{blogPost.title}
+				img(src=`${blogPost.thumbnailPhotoLocation}`, alt=`${blogPost.thumbnailImageAlt}`, width='500', height='auto')
+				span.author-name نویسنده: #{blogPost.authors.fullName}
+				div.hidden.createdDate #{blogPost.createdAt}
+
+block footer
+		
+	

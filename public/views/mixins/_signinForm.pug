@@ -1,0 +1,12 @@
+mixin signinForm()
+	form(action='/users/signin', method='POST')
+		each item in h.signIn
+			.group-field
+				label.form-label
+					input.input-field(type=item.type, name=item.name,placeholder=' ')
+					span.label #{item.label}
+					!= h.signin(item.icon)
+		input(type='hidden', name='_csrf', value=`${csrfToken}`)
+		input.btn(type='submit', value='ثبت نام')
+	.text-field-details
+		a(href="/users/login"): span قبلا ثبت نام کردی ؟

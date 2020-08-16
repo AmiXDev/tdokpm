@@ -1,0 +1,14 @@
+mixin loginForm()
+	form(action="/users/login", method="POST")
+		each item in h.login
+			.group-field
+				label.form-label
+					input.input-field(type=item.type, name=item.name,placeholder=' ')
+					span.label #{item.label}
+					!= h.loginForm(item.icon)
+		.text-field-details
+			a(href="#"): span فراموشی کلمه عبور ؟
+		input(type='hidden', name='_csrf', value=`${csrfToken}`)
+		input.btn(type='submit', value='ورود')
+	.text-field-details
+		a(href="/users/signin"): span قبلا ثبت نام نکردی ؟

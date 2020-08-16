@@ -1,0 +1,40 @@
+extends ../layout
+
+block navbarTop
+	nav.navbar-top-container.fixed-header
+		a(href="/")
+			img.back(src=h.backArrow)
+			span بازگشت
+		span #{title}
+block slideOutMenu
+block content
+	.header-text
+		span #{title}
+	form(action='/users/editProfile', method='POST')
+		.group-field.display-flex-wrap
+			label.form-label
+				input.input-field(type='text', name='fullName', placeholder=' ', value=user.fullName)
+				span.label نام و نام خانوادگی
+				!= h.userIcon
+			label.form-label
+				input.input-field(type='text', name='phoneNo', placeholder=' ', value=user.phoneNo, disabled)
+				span.label تلفن همراه
+				!= h.phoneIcon
+			label.form-label
+				input.input-field(type='text', name='email', placeholder=' ', value=user.email )
+				span.label پست الکترونیکی
+				!= h.emailIcon
+			label.form-label
+				input.input-field(type='text', name='webSite', placeholder=' ', value=user.webSite )
+				span.label وب سایت
+				!= h.globalIcon
+			label.form-label
+				input.input-field(type='text', name='address', placeholder=' ', value=user.address )
+				span.label آدرس
+				!= h.addressIcon
+					
+		input(type='hidden', name='_csrf', value=`${csrfToken}`)
+		input.btn(type='submit', value='ذخیره تغییرات')
+		
+block footer
+block navbar-bottom

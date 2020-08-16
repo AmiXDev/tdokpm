@@ -1,0 +1,111 @@
+doctype html
+html
+	head
+		title= `${title} | ${h.siteName}`
+		link(rel='stylesheet', href='/dist/style.css')
+		link(rel="shortcut icon" type="image/png" href="/images/icons/doughnut.png")
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+	body
+	block navbarTop
+		nav.navbar-top-container.fixed-header
+			button.toggle-button.btn-toggle-menu.btn-hamburger.js-slideout-toggle
+				.toggle-view
+					.toggles
+						.toggle-icon
+					.title-toggle فهرست
+			button#go-back(type=button, onClick=`window.history.back()`)
+				.go-back-icon
+					.inner-go-back-icon
+				.title-toggle بازگشت
+	block slideOutMenu
+		nav.menu-slideout#menu.slideout-menu.slideout-menu-right
+			ul.menu-slideout-unordered-list
+				.logo-slideout
+					img(src=h.siteLogo alt="آقای گوگل")
+					.spelling-groupe
+						.englishMrgoogle Mr-Google
+						.persianMrgoogle آقای گوگل
+				each item in h.menu
+					li.menu-slidout-items
+						a.menu-slideout-link(href=item.slug, class=(currentPath.startsWith(item.slug) ? 'navbar-menu-active' : ''))
+								!= h.icon(item.icon)
+								span #{item.title}
+			ul.social-slideout-unordered-list
+				each item in h.socialmediasIcon
+					li.socials-items
+						a.social-items-link(href=item.slug alt=item.alt)
+							!= h.icon(item.icon)
+			.copyright-section
+				span طراحی و توسعه با 
+				!= h.copyright
+				span توسط AmiX
+	main#panel
+		block messages
+			if locals.flashes
+				.flash-messages
+				- const categories = Object.keys(locals.flashes)
+						each category in categories
+							each message in flashes[category]
+								.flash(class=`flash--${category}`)
+									p.flash__text!= message
+									button.flash__remove(onClick="this.parentElement.remove()") &times;
+		.offScreen
+		block content
+			p content
+		block footer
+			p footer
+		block live-chat
+			.msg_box(style="left: 0px")
+				.msg_head
+					img(src=h.liveSupport)
+					.typing-indicator
+						span
+						span
+						span
+				.contentArea(style="display: none")
+					.msg_header-info
+							<div class="chat-online-supporter">
+								span پشتیبانی آنلاین مستر گوگل
+							</div>
+							button.minimize-chat-support
+								img(src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBmaWxsPSIjRkZGIiB4PSIwcHgiIHk9IjBweCINCgkgdmlld0JveD0iMCAwIDQ5MS45OTYgNDkxLjk5NiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDkxLjk5NiA0OTEuOTk2OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8Zz4NCgk8Zz4NCgkJPHBhdGggZD0iTTQ4NC4xMzIsMTI0Ljk4NmwtMTYuMTE2LTE2LjIyOGMtNS4wNzItNS4wNjgtMTEuODItNy44Ni0xOS4wMzItNy44NmMtNy4yMDgsMC0xMy45NjQsMi43OTItMTkuMDM2LDcuODZsLTE4My44NCwxODMuODQ4DQoJCQlMNjIuMDU2LDEwOC41NTRjLTUuMDY0LTUuMDY4LTExLjgyLTcuODU2LTE5LjAyOC03Ljg1NnMtMTMuOTY4LDIuNzg4LTE5LjAzNiw3Ljg1NmwtMTYuMTIsMTYuMTI4DQoJCQljLTEwLjQ5NiwxMC40ODgtMTAuNDk2LDI3LjU3MiwwLDM4LjA2bDIxOS4xMzYsMjE5LjkyNGM1LjA2NCw1LjA2NCwxMS44MTIsOC42MzIsMTkuMDg0LDguNjMyaDAuMDg0DQoJCQljNy4yMTIsMCwxMy45Ni0zLjU3MiwxOS4wMjQtOC42MzJsMjE4LjkzMi0yMTkuMzI4YzUuMDcyLTUuMDY0LDcuODU2LTEyLjAxNiw3Ljg2NC0xOS4yMjQNCgkJCUM0OTEuOTk2LDEzNi45MDIsNDg5LjIwNCwxMzAuMDQ2LDQ4NC4xMzIsMTI0Ljk4NnoiLz4NCgk8L2c+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8L3N2Zz4NCg==")
+					.formArea
+						.title  لطفا  اطلاعات زیر را وارد کنید تا در صورت قطع ارتباط با شما تماس برقرار کنیم.
+						form.inputFields
+							each item in h.onlineChat
+								.inputContainer.group-field
+									label.form-label
+										input.input-field(class=`${item.class}`, type=item.type, placeholder=" ", required)
+										span.label #{item.label}
+										!= h.icon(item.icon)
+							input.submitBtn.btn(type="submit", value="گفتگو با پشتیبان")
+						.copyright-section
+							span طراحی و توسعه با
+							!= h.copyright
+							span توسط AmiX
+					.chatArea(style="display: none")
+						.messages
+							.msg_push_old
+							.msg_push_new
+						.typing
+						input.inputMessage(rows="1", placeholder="پیام خود را وارد کنید....")
+
+	block navbar-bottom
+		nav.navbar-bottom-container
+			ul.navbar-bottom-unordered-list
+				if user
+					each item in h.navbarBottomItemsForUser
+						li.navbar-bottom-items.user-logged-in
+							a.navbar-bottom-link(href=item.slug, class=(currentPath.startsWith(item.slug) ? 'navbar-bottom-active' : ''))
+								!= h.icon(item.icon)
+								span #{item.title}
+				else
+					each item in h.navbarBottomItems
+						li.navbar-bottom-items
+							a.navbar-bottom-link(href=item.slug, class=(currentPath.startsWith(item.slug) ? 'navbar-bottom-active' : ''))
+									!= h.icon(item.icon)
+									span #{item.title}
+	block scripts
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.2.0/socket.io.js")
+		script(src="https://unpkg.com/jalali-moment/dist/jalali-moment.browser.js")
+		script(src="/dist/App.bundle.js")
