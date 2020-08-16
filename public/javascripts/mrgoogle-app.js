@@ -364,7 +364,10 @@ sharingButton.addEventListener('click', () => {
 		navigator.share({
 			text: pageTitle,
 			url: pageUrl
-		});
+		}).then( () => {
+			console.log('thanks for sharing');
+		})
+		.catch(console.error);
 	} else {
 		console.log('no support');
 	}

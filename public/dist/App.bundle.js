@@ -11678,7 +11678,9 @@ sharingButton.addEventListener('click', function () {
 		navigator.share({
 			text: pageTitle,
 			url: pageUrl
-		});
+		}).then(function () {
+			console.log('thanks for sharing');
+		}).catch(console.error);
 	} else {
 		console.log('no support');
 	}
