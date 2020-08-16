@@ -354,10 +354,10 @@ minimizeIcon.addEventListener('click', () => {
 
 // web sharing API
 
-const sharingButton = document.querySelector('button[arialButton="one"]');
+const sharingButton = document.querySelector('.navbar-bottom-blog-items').firstElementChild;
+console.log(sharingButton)
 const pageUrl = window.document.location.href;
 const pageTitle = window.document.title;
-console.log(pageUrl, pageTitle);
 
 sharingButton.addEventListener('click', () => {
 	if(navigator.share) {
