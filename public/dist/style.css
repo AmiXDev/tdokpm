@@ -1750,7 +1750,7 @@ input.btnForadmin.btn {
         grid-column: 3;
     -ms-grid-row: 1;
         grid-row: 1; }
-  .navbar-bottom-blog-items a span {
+  .navbar-bottom-blog-items button span {
     display: -ms-flexbox;
     display: flex;
     width: 100%;
