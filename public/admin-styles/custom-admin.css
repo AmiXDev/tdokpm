@@ -1,0 +1,87 @@
+:root {
+--bold: iranyekanbold;
+--light: iranyekan300;
+--normal: iranyekannormal;
+--enbold: robotbold;
+--enlight: robot300;
+--enregular: robotnormal;
+--vazir: Vazir;
+}
+
+
+body {
+direction: rtl;
+}
+
+.box__Box-sc-2cgj74-0.bvtWqh.admin-bro_Box, .header__Base-sc-166yp31-0.bjoUbX.header__H4-sc-166yp31-3.bHUkVm.admin-bro_Header.admin-bro_H4, .box__Box-sc-2cgj74-0.iTWYLS.admin-bro_Box {
+    display: none;
+	}
+	
+.sidebar-branding__LogoLink-sc-1ozeetj-0.fYnfYS span {
+font-family: var(--bold);
+font-size: 0.8em;
+padding-right: 5px;
+}
+.label__Label-sc-17sbdx9-0.ctNoPh.admin-bro_Label {
+text-align: right;
+font-family: var(--bold);
+font-size: 1.5em;
+margin-bottom: 1em;
+}
+
+.admin-bro_Text {
+font-family: var(--normal), var(--enlight);
+font-size: 1em;
+}
+
+.admin-bro_Header.admin-bro_H2, .admin-bro_Header.admin-bro_H3, .label__Label-sc-17sbdx9-0.lgZVCz.admin-bro_Label, .message-box__StyledMessageBox-sc-1wpq7j8-0.cRiKgz {
+font-family: var(--bold);
+}
+
+.breadcrumbs__BreadcrumbLink-yjyesi-0.ebFVpi, .admin-bro_Button, .form-group__FormGroup-sc-1r7v1ei-0.iIfDtJ, .link__Link-sc-1uq0k19-0.bcIRXA.admin-bro_Link, .button__Button-sc-3bpuam-0.fPgTJB.admin-bro_Button, .button__Button-sc-3bpuam-0.dbSomZ.admin-bro_Button, .box__Box-sc-2cgj74-0.fnzDOv.admin-bro_Box, .admin-bro_SortLink, .action-button__StyledLink-sc-1tnwd9t-0.cfbFgf{
+font-family: var(--normal), var(--enlight);
+}
+
+.label__Label-sc-17sbdx9-0.lgZVCz.admin-bro_Label, .header__Base-sc-166yp31-0.hMGFSP.admin-bro_Header.admin-bro_H3 {
+    color: white;
+}
+
+.iskYb {
+    fill: none;
+    stroke: #182034;
+    stroke-width: 2px;
+	}
+
+.dbSomZ:focus {
+    border-color: #364261;
+    box-shadow: 0px 1px 7px 2px rgb(54, 66, 97);
+	}
+.box__Box-sc-2cgj74-0.message-box__StyledCaption-sc-1wpq7j8-1.habyI.admin-bro_Box {
+    font-family: var(--bold);
+    background: #ff4b4b;
+    text-align: center;
+    line-height: 1.5em;
+	    font-size: .9em;
+	}
+.box__Box-sc-2cgj74-0.dpRhuQ.admin-bro_MessageBox {
+    margin: 0px;
+    }
+
+    .ql-snow .ql-picker:not(.ql-color-picker):not(.ql-icon-picker) svg {
+        left: 0;
+        right: auto;
+    }
+
+
+    .ql-snow .ql-picker.ql-font .ql-picker-label::before, .ql-snow .ql-picker.ql-font .ql-picker-item::before {
+        content: attr(data-value)!important;
+      }
+
+.ql-font-Vazir {
+    font-family: var(--vazir),  var(--enregular);
+}
+
+
+.box__Box-sc-2cgj74-0.kzFgpT.admin-bro_Box > section.box__Box-sc-2cgj74-0.wrapper__StyledWrapper-gd2y70-0.cFAdvW.admin-bro_Box > form > section.drawer-content__DrawerContent-sc-1j25263-0.bOafeJ > section:nth-child(3) > div > div.sc-ksYbfQ.kRiZBT.control.has-icons-right > div.quill-editor.ql-container.ql-snow, .box__Box-sc-2cgj74-0.kzFgpT.admin-bro_Box > section.box__Box-sc-2cgj74-0.wrapper__StyledWrapper-gd2y70-0.cFAdvW.admin-bro_Box > form > section.drawer-content__DrawerContent-sc-1j25263-0.bOafeJ > div > section > section > section.box__Box-sc-2cgj74-0.ijDTBe.admin-bro_Box > div > section > section:nth-child(3) > div > div.sc-ksYbfQ.kRiZBT.control.has-icons-right > div.quill-editor.ql-container.ql-snow{
+height: inherit!important;
+}
