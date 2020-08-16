@@ -1,0 +1,186 @@
+/* signin Form */
+.header-text {
+    padding: 1em;
+    font-family: $boldfont;
+    font-size: 1.5em;
+    width: 100%;
+    text-align: center;
+	color: $textgrey;
+}
+
+.group-field {
+	position: relative;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+	& input {
+	padding-right: 40px;
+	font-family: $normalfont;
+    width: 100%;
+    max-width: 260px;
+    display: block;
+    border: 0;
+	height: 40px;
+	border-radius: 3px;
+	color: $textgrey;
+	}
+	& input:focus {
+	outline: none;
+	color: $textgrey;
+	}
+	& input:focus ~ .signinIcon {
+	fill: $blue;
+	}
+
+	& .label {
+	font-family: $normalfont;
+	color: $textgrey;
+    position: absolute;
+    top: 50%;
+    right: 0;
+	transform: translate(-35px, -50%);
+	pointer-events: none;
+	padding: 0 5px;
+	font-size: 0.8em;
+	}
+	& .input-field:focus + .label {
+	    top: 0;
+	    background: #fff;
+		font-size: 0.7em;
+		transition: top 500ms, font-size 500ms;
+		padding: 0 5px;
+	}
+	 & .input-field:not(:placeholder-shown) + .label {
+	 	top: 0;
+		font-size: 0.8em;
+	    background: #fff;
+		transition: top 500ms, font-size 500ms;
+		padding: 0 5px;
+	 }
+}
+
+.signinIcon {
+    fill: #7b7b7bdb;
+    position: absolute;
+    right: 10px;
+    bottom: 0;
+    width: 1.5em;
+    height: 100%;
+}
+
+.form-label {
+	position: relative;
+    margin-top: 2em;
+    width: 100%;
+    max-width: 260px;
+	border-radius: 3px;
+	border: 1px solid #949494;
+}
+
+.text-field-details a{
+    text-align: right;
+    width: 100%;
+    max-width: 110px;
+    margin: 0 auto;
+	display: block;
+	color: $textgrey;
+	font-family: $font300;
+	margin-top: 1em;
+	font-size: 0.8em;
+	text-align: center;
+}
+
+.btn {
+	background: #518ef8;
+    width: 100%;
+    max-width: 260px;
+    border-radius: 3px;
+    margin: 60px auto 0;
+    display: block;
+    padding: 0.7em 1em;
+    color: #fff;
+    font-family: $boldfont;	
+	border: 0;
+    box-shadow: 0px 2px 5px #0000004a;
+}
+
+.btn a {
+	display: block;
+	padding: 1em;
+	color: #fff;
+	text-align: center;
+	font-family: $boldfont;
+}
+
+
+/* dashboard */
+
+.background-partial {
+ background: #FBBB00;
+ height: 150px;
+ color: #fff;
+}
+
+.dashboard-inner-details {
+position: relative;
+background: #fff;
+width: 100%;
+max-width: 280px;
+margin: 0 auto;
+}
+
+.firsthand-details {
+	padding: 1em;
+	box-shadow: 2px 3px 12px #0000003d;
+	& span {
+	    display: block;
+	    width: 100%;
+	    text-align: center;
+	    color: grey;
+		padding-top: 1em;
+	}
+	& img {
+		width: 82px;
+		background: #518ef8;
+		border-radius: 50%;
+		display: block;
+		margin: 0 auto 1em;
+	}
+}
+
+.dashboard-box-anchors {
+padding-top: 9em;
+width: 100%;
+max-width: 280px;
+margin: 0 auto;
+}
+
+.dashboard-items {
+	list-style: none;
+    border: 1px solid $textgrey;
+    margin-bottom: 1em;
+    border-radius: 3px;
+	& a {
+	display: flex;
+	align-items: center;
+	padding: 0.5em;
+	color: $textgrey;
+	}
+	& a svg {
+	font-size: 1.5em;
+	}
+	& a span {
+	padding-right: 5px;
+	font-family: $normalfont;
+	}
+}
+
+
+/* edit profile */
+
+.display-flex-wrap {
+	display: flex;
+	flex-wrap: wrap;
+	max-width: 300px;
+	margin: 0 auto;
+}

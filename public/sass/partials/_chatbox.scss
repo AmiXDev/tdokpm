@@ -1,0 +1,505 @@
+
+.msg_box {
+    width: 100%;
+    height: 392px;
+    bottom: 70px;
+    position: absolute;
+    right: 0;
+    padding: 0 10px;
+	z-index: 8;
+	& .msg_head img{ 
+		width: 3.4em;
+		position: fixed;
+		bottom: 80px;
+		right: 20px;
+		background: #f3f3f3;
+		border-radius: 50%;
+		padding: .2em;
+		border: 1px solid #a3a2a3;
+		box-shadow: 1px 2px 2px #00000057;
+	}
+}
+
+
+.typing-indicator {
+    will-change: transform;
+    width: auto;
+    border-radius: 50px;
+    padding: 20px;
+    display: table;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 15px;
+    animation: 2s bulge infinite ease-out;
+    right: 15px;
+  &::after {
+    height: 10px;
+    width: 10px;
+    left: -10px;
+    bottom: -10px;
+  }
+  span {
+    height: 5px;
+    width: 5px;
+    float: left;
+    margin: 0 1px;
+    background-color: white;
+    display: block;
+    border-radius: 50%;
+    opacity: 0.4;
+    @for $i from 1 through 3 {
+      &:nth-of-type(#{$i}) {
+        animation: 1s blink infinite ($i * .3333s);
+      }
+    }
+  }
+  }
+  
+ @keyframes blink {
+  50% {
+    opacity: 1;
+  }
+  }
+ .contentArea {
+    background: #f3f3f3;
+    height: 100%;
+    border-radius: 3px;
+    box-shadow: 2px 2px 8px #00000052;
+    max-width: 320px;
+    z-index: 9999999999999999999999;
+    position: relative;
+	& .msg_header-info {
+		background: #2ecc71;
+		padding: .5em;
+		box-shadow: 0px 2px 2px #00000070;
+		z-index: 99;
+		position: relative;
+		display: flex;
+		justify-content: space-between;
+		button {
+			width: 1.6em;
+		    float: left;
+		    position: absolute;
+		    top: 57%;
+		    transform: translateY(-50%);
+		    left: 10px;
+			padding: 0;
+			
+			&:focus {
+				outline: none;
+			}
+		}
+	}
+ }
+ 
+ 
+.formArea > .title{
+	 font-family: $normalfont;
+	 color: $textgrey;
+	 font-size: 1em;
+    transform: inherit;
+    padding: 1em;
+    line-height: 1.5em;
+    text-align: center;
+
+}
+ 
+.msg_header-info img {
+	width: 1.2em;
+}
+ 
+.messages {
+    background: white;
+    height: 290px;
+    font-size: 12px;
+    padding: 23px 15px 15px 15px;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.typing {
+	background: white;
+	width: 100%;
+	height: 18px;
+	padding: 0.5em;
+	font-family: $normalfont;
+	font-size: .7em;
+	color: $textgrey;
+	}
+	
+.inputMessage {
+	    position: absolute;
+	    bottom: 0;
+	    width: 100%;
+	    height: 50px;
+	    border: none;
+	    border-top: 1px solid #29b446;
+		font-family: $normalfont;
+		font-size: 0.8em;
+		padding: 1em;
+	&:focus {
+		outline: none;
+	}
+}
+
+
+.msg_b {
+	background: #f3f3f3;
+    padding: 10px 15px;
+    min-height: 15px;
+    margin-bottom: 30px;
+    position: relative;
+    margin-left: 50px;
+    word-wrap: break-word;
+    color: #616161;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    font-family: iranyekanbold;
+    line-height: 1.5em;
+	&::after {
+content: "";
+    position: absolute;
+    top: 0px;
+    border-top: 8px solid #f3f3f3;
+    border-left: 14px solid transparent;
+    border-right: 17px solid transparent;
+    left: 92%;
+	}
+	&::before {
+content: "";
+    position: absolute;
+    top: 0px;
+    border-top: 8px solid rgba(0, 0, 0, 0.08);
+    border-right: 17px solid transparent;
+    left: 100%;
+	}
+	& .timestamp {
+	right: 0;
+	}
+}
+
+
+.msg_a {
+	background: #2ECC71;
+	padding: 10px 15px;
+	min-height: 15px;
+	margin-bottom: 30px;
+	position: relative;
+	margin-right: 14px;
+	word-wrap: break-word;
+	color: #FFF;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+	font-family: iranyekanbold;
+	line-height: 1.5em;
+	margin-left: 57px;
+		&::after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    border-top: 8px solid #2ECC71;
+    border-left: 14px solid transparent;
+    border-right: 17px solid transparent;
+    right: 92%;
+	}
+	&::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    border-bottom: 9px solid #f4433600;
+    border-right: 13px solid rgba(0, 0, 0, 0.08);
+    border-left: 14px solid transparent;
+    right: 100%;
+		}
+	& .timestamp {
+	left: 0;
+	}
+	& span.admin {
+		width: 40px;
+		height: 40px;
+		background: #f3f3f3;
+		display: block;
+		position: absolute;
+		bottom: 100%;
+		border-radius: 50%;
+		background-image: url(/images/icons/customer-service.svg);
+		right: 108%;
+		top: -20px;
+		box-shadow: 1px 2px 2px 1.5px #00000036;
+	}
+}
+
+.timestamp {
+position: absolute;
+bottom: 100%;
+color: $textgrey;
+text-shadow: none;
+}
+  
+
+.chat-online-supporter {
+	& span {
+		color: #FFF;
+		font-family: $boldfont;
+	}
+}
+
+
+label.form-label img {
+    width: 1.5em;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+	right: 10px;
+}
+
+.inputContainer {
+position: relative;
+	 & .form-label {
+	  margin-top: 1em;
+	 }
+}
+
+.submitBtn {
+    margin: 0px auto;
+    margin-top: 1em;
+	    background: #2ecc71;
+}
+
+.copyright-icons {
+    width: 1.2em;
+    margin: 0 5px;
+}
+
+.pages {
+    width: 100%;
+    text-align: center;
+    height: 100vh;
+	color: $textgrey;
+	padding: 2em;
+	& li.login .form .title {
+	transform: inherit!important;
+	font-family: $boldfont;
+	font-size: 2em;
+	margin-top: 2em;
+	}
+	& .login .form input {
+		border: none;
+		border-bottom: 2px solid black;
+		width: 100%;
+		max-width: 250px;
+		padding: .5em;
+		text-align: center;
+		    margin-top: 1em;
+		&:focus {
+		outline: none;
+		border-bottom: 2px solid red;
+		transition: border-bottom 500ms;
+		
+		}
+	}
+}
+
+
+.pages {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+	 list-style: none;
+}
+
+.page {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+
+
+.usersOnline {
+    width: 15%;
+    float: left;
+    height: 100%;
+    text-align: center;
+    border-left: 1px solid #000;
+    position: absolute;
+    top: 0;
+    padding: 1em;
+    font-size: 1em;
+	& h1 {
+		margin: 0!important;
+		font-family: $boldfont;
+		font-size: 2em;
+	}
+}
+
+.container {
+    width: 85%;
+    height: 95%;
+    padding: 1em;
+    padding-left: 5em;
+    float: left;
+	& .inputMessage {
+		position: relative;
+		height: 34px;
+		border-right: 0;
+		border-left: 0;
+		padding-left: 10px;
+		padding-bottom: 5px;
+		width: 100%;
+		border-bottom: 2px solid black;
+		border-top: none;
+	}
+	& .typing {
+	    font-size: 1em;
+		height: 30px;
+	}
+}
+
+.chatHeader + .messages {
+    text-align: right!important;
+    list-style: none;
+    font-size: 1.2em;
+	font-family: $normalfont;
+	border: 0.1em solid black;
+}
+
+.chatHeader {
+    height: 9%;
+    margin: 0;
+    padding: 0.1em 0.1em 0.1em 0.3em;
+    margin-left: -1em;
+    margin-right: -1em;
+}
+
+.chatHeader + .messages + .typing + .inputMessage {
+
+}
+
+#admins {
+list-style: none;
+}
+
+
+input.btnForadmin.btn {
+    border-bottom: none!important;
+	margin-top: 3em!important;
+	cursor: pointer ;
+}
+
+/*
+
+.pages {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.page {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+
+
+
+
+
+.form {
+    height: 100px;
+    margin-top: -100px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 100%;
+}
+
+.login.page .form .usernameInput,
+.passwordInput {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #fff;
+    outline: none;
+    padding-bottom: 15px;
+    text-align: center;
+    width: 400px;
+}
+
+.title {
+    font-size: 200%;
+}
+
+.login.page .usernameInput,
+.passwordInput {
+    font-size: 200%;
+    letter-spacing: 3px;
+}
+
+.title,
+.login.page .usernameInput,
+.passwordInput {
+    color: #fff;
+    font-weight: 100;
+}
+
+.chat.page {
+    display: none;
+}
+
+.adminList {
+    padding: 0px;
+}
+
+.adminList li {
+    margin: 10px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.inputMessage {
+    font-size: 100%;
+}
+
+.log {
+    color: gray;
+    font-size: 70%;
+    margin: 5px;
+    text-align: center;
+}
+
+
+.chatHeader {
+    height: 9%;
+    margin: 0;
+    padding: 0.1em 0.1em 0.1em 0.3em;
+    margin-left: -1em;
+    margin-right: -1em;
+    border-bottom: 0.1em solid #000;
+}
+
+
+.username,
+.passwordInput {
+    font-weight: 700;
+    overflow: hidden;
+    padding-right: 15px;
+}
+
+.log {
+    color: gray;
+    font-size: 12px;
+    text-align: center;
+    padding: 10px;
+    text-align: center;
+}
+
+.inputMessage {
+    position: relative;
+    width: 290px;
+    height: 34px;
+    border-right: 0;
+    border-left: 0;
+    padding-left: 10px;
+    padding-bottom: 5px;
+	}
+
+*/	

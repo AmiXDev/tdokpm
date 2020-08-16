@@ -1,0 +1,93 @@
+.hidden { display: none!important; }
+
+#panel section.preview-blog-post:first-of-type {
+    margin-top: 1em;
+}
+
+.preview-blog-post {
+position: relative;
+    margin: 1em;
+    border: 1px solid #aaa;
+    & h1{
+        font-family: $boldfont;
+        font-size: 1em;
+        grid-column: 2;
+        grid-row: 1;
+    }
+    & img {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    & .author-name {
+        grid-column: 2;
+        grid-row: 1;
+        font-family: $normalfont;
+        font-size: 0.8em;
+        position: absolute;
+        bottom: 0;
+    }
+
+    & .createdDate {
+        grid-column: 2;
+        grid-row: 1;
+        font-family: $normalfont;
+        font-size: 0.8em;
+        position: absolute;
+        bottom: 20px;
+    }
+}
+
+.grid-two-cols-one-row {
+    grid-template-columns: 0.5fr 1fr;
+    grid-template-rows: auto;
+    display: grid;
+    column-gap: 0.5em;
+}
+
+
+.single-wrapper  {
+    & .inner-wrapper {
+        position: relative;
+        & .featured-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            object-position: center;
+        }
+        & .single-author-name {
+            position: absolute;
+            bottom: 2.4em;
+            right: calc(40px + 1.5em);
+            font-size: 14px;
+        }
+        & .single-author-gravatar {
+            position: absolute;
+            bottom: 1em;
+            right: 1em;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+        }
+        & .single-createdDate {
+            position: absolute;
+            bottom: 1.4em;
+            right: calc(43px + 1.5em);
+            font-size: 12px;
+        }
+
+    }
+    & .dark-layout {
+        width: 100%;
+        height: 250px;
+        position: absolute;
+        top: 0;
+        background: linear-gradient(360deg, #0000009c, #ffffff00);
+    }
+    & .single-createdDate, & .single-author-name {
+        position: absolute;
+        color: #fff;
+        text-shadow: 1px 1px 1px #00000085;
+        font-family: $normalfont;
+    }
+}

@@ -1,0 +1,31 @@
+/* YekanFont */
+
+@font-face {
+	font-family: normal;
+	font-style: normal;
+	font-weight: normal;
+	src: url('fonts/fonts/eot/iranyekanwebregular.eot');
+	src: url('fonts/fonts/eot/iranyekanwebregular.eot?#iefix') format('embedded-opentype'),  url('fonts/fonts/woff2/iranyekanwebregular.woff2') format('woff2'),  url('fonts/fonts/woff/iranyekanwebregular.woff') format('woff'),  url('fonts/fonts/ttf/iranyekanwebregular.ttf') format('truetype');
+}
+/* Latin fonts (Roboto) */
+@font-face {
+	font-family: enbold;
+	font-style: normal;
+	font-weight: bold;
+	src: url('fonts/fonts/eot/robotobold.eot');
+	src: url('fonts/fonts/eot/robotobold.eot?#iefix') format('embedded-opentype'),  url('fonts/fonts/woff2/robotobold.woff2') format('woff2'),  url('fonts/fonts/woff/robotobold.woff') format('woff'),  url('fonts/fonts/ttf/robotobold.ttf') format('truetype');
+}
+@font-face {
+	font-family: en300;
+	font-style: normal;
+	font-weight: 300;
+	src: url('fonts/fonts/eot/robotolight.eot');
+	src: url('fonts/fonts/eot/robotolight.eot?#iefix') format('embedded-opentype'),  url('fonts/fonts/woff2/robotolight.woff2') format('woff2'),  url('fonts/fonts/woff/robotolight.woff') format('woff'),  url('fonts/fonts/ttf/robotolight.ttf') format('truetype');
+}
+@font-face {
+	font-family: ennormal;
+	font-style: normal;
+	font-weight: normal;
+	src: url('fonts/fonts/eot/robotoregular.eot');
+	src: url('fonts/fonts/eot/robotoregular.eot?#iefix') format('embedded-opentype'),  url('fonts/fonts/woff2/robotoregular.woff2') format('woff2'),  url('fonts/fonts/woff/robotoregular.woff') format('woff'),  url('fonts/fonts/ttf/robotoregular.ttf') format('truetype');
+}
