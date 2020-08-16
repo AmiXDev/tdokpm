@@ -11672,12 +11672,15 @@ var sharingButton = document.querySelector('.navbar-bottom-blog-items').firstEle
 console.log(sharingButton);
 var pageUrl = window.document.location.href;
 var pageTitle = window.document.title;
+var image = window.document.querySelector('.featured-image').src;
 
 sharingButton.addEventListener('click', function () {
 	if (navigator.share) {
 		navigator.share({
 			text: pageTitle,
+			img: image,
 			url: pageUrl
+
 		}).then(function () {
 			console.log('thanks for sharing');
 		}).catch(console.error);

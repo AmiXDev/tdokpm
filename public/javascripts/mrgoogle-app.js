@@ -358,12 +358,15 @@ const sharingButton = document.querySelector('.navbar-bottom-blog-items').firstE
 console.log(sharingButton)
 const pageUrl = window.document.location.href;
 const pageTitle = window.document.title;
+const image = window.document.querySelector('.featured-image').src;
 
 sharingButton.addEventListener('click', () => {
 	if(navigator.share) {
 		navigator.share({
 			text: pageTitle,
+			img: image,
 			url: pageUrl
+
 		}).then( () => {
 			console.log('thanks for sharing');
 		})
