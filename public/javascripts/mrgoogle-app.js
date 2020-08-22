@@ -353,8 +353,6 @@ minimizeIcon.addEventListener('click', () => {
 })(jQuery);
 
 
-
-
 // web sharing API
 
 const sharingButton = document.querySelector('.navbar-bottom-blog-items').firstElementChild;
@@ -371,12 +369,14 @@ const shareData = {
 
 
 // Must be triggered some kind of "user activation"
-sharingButton.addEventListener('click', async () => {
-  try {
-    await navigator.share(shareData)
-    console.log('MDN shared successfully');
-  } catch(err) {
-	console.log('sorry it doesnot support');
-  }
-});
+
+sharingButton.addEventListener('click', () => {
+	navigator.share(shareData)
+	  .then(() =>
+		console.log('MDN shared successfully')
+	  )
+	  .catch((e) =>
+		console.log('Error: ' + e)
+	  )
+  });
 

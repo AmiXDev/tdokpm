@@ -521,6 +521,9 @@ p {
   font-family: Vazir, robotnormal;
   font-size: .8em; }
 
+.navbar-bottom-blog-items {
+  cursor: pointer; }
+
 /* signin Form */
 .header-text {
   padding: 1em;
