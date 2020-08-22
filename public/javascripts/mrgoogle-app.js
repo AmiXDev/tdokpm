@@ -2,6 +2,9 @@ import '../sass/style.scss';
 import $ from 'jquery';
 window.jQuery = $; window.$ = $;
 import Slideout from './modules/slideout';
+import "@babel/polyfill";
+
+
 
 const slideout = new Slideout({
 	panel: document.getElementById('panel'),
@@ -360,19 +363,20 @@ const pageUrl = window.document.location.href;
 const pageTitle = window.document.title;
 const image = window.document.querySelector('.featured-image').src;
 
-sharingButton.addEventListener('click', () => {
-	if(navigator.share) {
-		navigator.share({
-			text: pageTitle,
-			img: image,
-			url: pageUrl
+const shareData = {
+	title: pageTitle,
+	url:  pageUrl
+}
 
-		}).then( () => {
-			console.log('thanks for sharing');
-		})
-		.catch(console.error);
-	} else {
-		console.log('no support');
-	}
-})
+
+
+// Must be triggered some kind of "user activation"
+sharingButton.addEventListener('click', async () => {
+  try {
+    await navigator.share(shareData)
+    console.log('MDN shared successfully');
+  } catch(err) {
+	console.log('sorry it doesnot support');
+  }
+});
 
