@@ -355,28 +355,51 @@ minimizeIcon.addEventListener('click', () => {
 
 // web sharing API
 
-const sharingButton = document.querySelector('.navbar-bottom-blog-items').firstElementChild;
-console.log(sharingButton)
-const pageUrl = window.document.location.href;
-const pageTitle = window.document.title;
-const image = window.document.querySelector('.featured-image').src;
+// const sharingButton = window.document.querySelector('.navbar-bottom-blog-items').firstElementChild;
+// console.log(sharingButton)
+// const pageUrl = window.document.location.href;
+// const pageTitle = window.document.title;
+// const image = window.document.querySelector('.featured-image').src;
 
-const shareData = {
-	title: pageTitle,
-	url:  pageUrl
-}
+// const shareData = {
+// 	title: pageTitle,
+// 	url:  pageUrl
+// }
 
+//   const btn = document.querySelector('button');
 
+//   btn.addEventListener('click', () => {
+// 	navigator.share(shareData)
+// 	  .then(() =>
+// 		console.log('MDN shared successfully')
+// 	  )
+// 	  .catch((e) =>
+// 		console.log('Error: ' + e)
+// 	  )
+//   });
 
-// Must be triggered some kind of "user activation"
+// const click = document.querySelector('.clicking');
 
-sharingButton.addEventListener('click', () => {
-	navigator.share(shareData)
-	  .then(() =>
-		console.log('MDN shared successfully')
-	  )
-	  .catch((e) =>
-		console.log('Error: ' + e)
-	  )
-  });
+// $(document)('click', '.clicking', () => {
+// 	console.log('clicked');
+// })
 
+// var ctx = document.getElementById('chart-preview').getContext('2d');
+// var chart = new Chart(ctx, {
+//     // The type of chart we want to create
+//     type: 'line',
+
+//     // The data for our dataset
+//     data: {
+//         labels: '#{resultArrayForDate}',
+//         datasets: [{
+//             label: 'قیمت حواله دلار زنده',
+//             backgroundColor: 'rgb(255, 99, 132)',
+//             borderColor: 'rgb(255, 99, 132)',
+//             data: '#{resultArrayForDollar}'
+//         }]
+//     },
+
+//     // Configuration options go here
+//     options: {}
+// });
