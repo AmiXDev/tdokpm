@@ -1,48 +1,9 @@
 const request = require('request-promise');
 const cheerio = require('cheerio');
-const mongoose = require('mongoose');
-const MongoClient = require('mongodb').MongoClient;
-const momentJalali = require('moment-jalaali');
-const dbFunctions = require('../dbStore/dbFunctions');
-const assert = require('assert');
-var result = [1,6,7];
-var Chart = require('chart.js');
-const Dollar = require('../models/Dollar');
-const moment = require('moment-timezone');
 
 exports.homePage = (req, res) => {
-	const minutes = 60;
-	const the_interval = minutes * 60 * 1000;
-	setInterval(function () {
-		const USDPrice = 'https://topadvert.net/dollar/index.php';
-		var usd;
-
-		request(USDPrice, function (error, response, body) {
-			if (!error) {
-				MongoClient.connect(process.env.DATABASE, (err, db) => {
-					assert.equal(null, err);
-					var dollarCollection = db.collection('dollarChart');
-					var $ = cheerio.load(body),
-						usd = $('body').text();
-					var utc = new Date();
-					utc.setMinutes( utc.getMinutes() + 270);
-
-					time = utc.toISOString().replace(/T/, ' ').replace(/\..+/, '').replace(/[^,]+/g, "'$&'");
-					dollarCollection.insertOne({ number: usd, date: time }, function (err, res) {
-						assert.equal(null, err);
-						console.log('dollar price inserted into the db!!!' + momentJalali().format('jYYYY/jM/jD HH:mm:ss ' + usd))
-						db.close();
-					})
-				
-				});
-			} else {
-				console.log("لطفا از اتصال اینترنت خود اطمینان حاصل کنید." + error);
-			}
-		});
-	}, the_interval);
-	const usdLivePriceUrl = 'https://topadvert.net/dollar/index.php';
-	var usdLive;
-
+	const USDPrice = 'https://topadvert.net/dollar/index.php';
+	var usd;
 	var ManagementPlan = [
 		dollar50 = [],
 		dollar100 = [],
@@ -53,46 +14,38 @@ exports.homePage = (req, res) => {
 		dollar1000 = [],
 		dollar2000 = []
 	];
-	request(usdLivePriceUrl, function (error, response, body) {
-		if (!error) {
-			var $ = cheerio.load(body),
-				usdLive = $('body').text();
-		} else {
-			console.log("لطفا از اتصال اینترنت خود اطمینان حاصل کنید." + error);
-		}
-
+    request(USDPrice, function (error, response, body) {
+	
+	if (!error) {
+        var $ = cheerio.load(body),
+            usd = $('body').text();
+			
 		function managementDollarPlan(p, v, rawUSD) {
-			const planCalculator = v * p * usdLive;
+			const planCalculator = v * p * usd;
 			return planCalculator;
 		}
-
-		ManagementPlan[0].push([Math.ceil(managementDollarPlan(50, 1.18, usdLive))]);
-		ManagementPlan[1].push([Math.ceil(managementDollarPlan(100, 1.16, usdLive))]);
-		ManagementPlan[2].push([Math.ceil(managementDollarPlan(200, 1.15, usdLive))]);
-		ManagementPlan[3].push([Math.ceil(managementDollarPlan(300, 1.14, usdLive))]);
-		ManagementPlan[4].push([Math.ceil(managementDollarPlan(500, 1.12, usdLive))]);
-		ManagementPlan[5].push([Math.ceil(managementDollarPlan(750, 1.11, usdLive))]);
-		ManagementPlan[6].push([Math.ceil(managementDollarPlan(1000, 1.09, usdLive))]);
-		ManagementPlan[7].push([Math.ceil(managementDollarPlan(2000, 1.07, usdLive))]);
-		//const priceTracker = await dollarCollection.find(); 
 		
-		//var dollarChart = [];
+		ManagementPlan[0].push([Math.ceil(managementDollarPlan(50, 1.18, usd))]);
+		ManagementPlan[1].push([Math.ceil(managementDollarPlan(100, 1.16, usd))]);
+		ManagementPlan[2].push([Math.ceil(managementDollarPlan(200, 1.15, usd))]);
+		ManagementPlan[3].push([Math.ceil(managementDollarPlan(300, 1.14, usd))]);
+		ManagementPlan[4].push([Math.ceil(managementDollarPlan(500, 1.12, usd))]);
+		ManagementPlan[5].push([Math.ceil(managementDollarPlan(750, 1.11, usd))]);
+		ManagementPlan[6].push([Math.ceil(managementDollarPlan(1000, 1.09, usd))]);
+		ManagementPlan[7].push([Math.ceil(managementDollarPlan(2000, 1.07, usd))]);
 
 
-		var resultArrayForDollar = [];
-		var resultArrayForDate = [];
 
-		MongoClient.connect(process.env.DATABASE, function(err, db) {
-		 	assert.equal(null, err);
-			 var cursor = db.collection("dollarChart").find();
-			 cursor.forEach(function(data, err) {
-				 assert.equal(null, err);
-				 resultArrayForDollar.push(data.number);
-				 resultArrayForDate.push(data.date);
-			 }, function() {
-				 db.close();
-				 res.render('index', { title: 'شارژ اکانت گوگل ادوردز در 15 دقیقه با کم ترین تعرفه', usdLive, ManagementPlan, resultArrayForDollar, resultArrayForDate});
-			 });
-		});
-	});
+		//console.log(ManagementPlan50,ManagementPlan100,ManagementPlan200,ManagementPlan300,ManagementPlan500,ManagementPlan750,ManagementPlan1000,ManagementPlan2000);
+        // logs it to console (of my computer..)    
+    } 
+	
+	 else {
+        console.log("لطفا از اتصال اینترنت خود اطمینان حاصل کنید." + error);
+    }
+	
+res.render('index', { title: 'شارژ اکانت گوگل ادوردز در 15 دقیقه با کم ترین تعرفه', usd, ManagementPlan});
+
+    });
+
 };
