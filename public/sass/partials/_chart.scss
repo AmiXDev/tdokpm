@@ -1,0 +1,62 @@
+.live-dollar {
+  padding-top: 5em;
+}
+
+#chart-container {
+  width: 93%;
+  height: 150px;
+  position: relative;
+  margin: 2em auto;
+}
+
+#chart-preview {
+  background-color: rgb(13,77,157);
+  position: absolute;
+  top: 0;
+  border-radius: 25px;
+  box-shadow: 0px 0px 0px 3px #0000001c;
+}
+
+#today-date {
+  display: inline-flex;
+  padding: 0.5em 0 0 0;
+  z-index: 1;
+  position: relative;
+  text-shadow: 2px 0px 0px #0000001c;
+  & .today-day {
+    font-size: 3em;
+    padding-left: 3px;
+  }
+  & div:nth-child(2){
+    font-size: 1em;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap!important;
+    width: min-content;
+  }
+}
+
+
+#wrapper-container:after {
+  content: '';
+  background: rgb(34,136,231);
+  width: 100%;
+  height: 190px;
+  position: absolute;
+  top: 0px;
+  z-index: -1;
+  box-shadow: 0px 0px 0px 3px #0000001c;
+}
+
+#wrapper-container {
+  & #header-chart{
+    position: relative;
+    color: #FFF;
+    font-family: iranyekannormal, Vazir;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1em;
+  }
+}
