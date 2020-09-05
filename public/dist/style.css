@@ -521,7 +521,7 @@ p {
   font-family: Vazir, robotnormal;
   font-size: .8em; }
 
-.navbar-bottom-blog-items {
+.clicking {
   cursor: pointer; }
 
 /* signin Form */
@@ -742,9 +742,6 @@ p {
   .flash + .flash {
     animation-delay: 0.6s; }
 
-.flash-messages {
-  padding-top: 3.7em; }
-
 .flash--error {
   background: #F14336; }
 
@@ -770,83 +767,66 @@ button {
   border: none;
   background: none; }
 
-.stores {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  margin: -1.25em 0 0 -1.25em; }
+.live-dollar {
+  padding-top: 5em; }
 
-.store {
-  background: white;
-  margin: 1.25em 0 0 1.25em;
-  width: calc(33.3333% - 1.25em);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), 0 5px 10px rgba(0, 0, 0, 0.05); }
-  .store--wide {
-    width: 100%; }
-  .store__details {
-    padding: 2rem; }
-    .store__details p {
-      line-height: 1.2;
-      margin-bottom: 0; }
-  @media all and (max-width: 850px) {
-    .store {
-      width: calc(50% - 1.25em); } }
-  @media all and (max-width: 550px) {
-    .store {
-      width: 100%; } }
-
-.store__actions {
+#chart-container {
+  width: 93%;
+  height: 150px;
   position: relative;
-  z-index: 2;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 rgba(255, 255, 255, 0.2);
-  margin-bottom: 50px;
-  padding-top: 10px;
-  padding-bottom: 20px;
+  margin: 2em auto; }
+
+#chart-preview {
+  background-color: #0d4d9d;
+  position: absolute;
+  top: 0;
+  border-radius: 25px;
+  box-shadow: 0px 0px 0px 3px #0000001c; }
+
+#today-date {
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0.5em 0 0 0;
+  z-index: 1;
+  position: relative;
+  text-shadow: 2px 0px 0px #0000001c; }
+  #today-date .today-day {
+    font-size: 3em;
+    padding-left: 3px; }
+  #today-date div:nth-child(2) {
+    font-size: 1em;
+    -ms-flex-align: center;
+        align-items: center;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+        justify-content: center;
+    -ms-flex-wrap: wrap !important;
+        flex-wrap: wrap !important;
+    width: -webkit-min-content;
+    width: min-content; }
+
+#wrapper-container:after {
+  content: '';
+  background: #2288e7;
+  width: 100%;
+  height: 190px;
+  position: absolute;
+  top: 0px;
+  z-index: -1;
+  box-shadow: 0px 0px 0px 3px #0000001c; }
+
+#wrapper-container #header-chart {
+  position: relative;
+  color: #FFF;
+  font-family: iranyekannormal, Vazir;
   display: -ms-flexbox;
   display: flex;
-  color: white;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
   -ms-flex-align: center;
       align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around; }
-
-.store__action {
-  font-size: 10px; }
-  .store__action svg {
-    width: 25px;
-    fill: white; }
-  .store__action--edit a {
-    border-bottom: 0; }
-
-.store__hero {
-  position: relative;
-  padding: 0 10px 0 10px;
-  text-align: right; }
-  .store__hero:before {
-    display: block;
-    content: '';
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    right: 0;
-    background: linear-gradient(45deg, #05b3d6 0%, rgba(5, 179, 214, 0) 70%), linear-gradient(135deg, #0958ec 10%, rgba(9, 88, 236, 0) 80%), linear-gradient(225deg, #d209ec 10%, rgba(210, 9, 236, 0) 80%), linear-gradient(315deg, #05e129 100%, rgba(5, 225, 41, 0) 70%);
-    opacity: 0.6;
-    z-index: 1;
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
-            clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%); }
-  .store__hero img {
-    height: 100%;
-    width: 100%;
-    top: 0;
-    right: 0;
-    position: absolute;
-    left: 0;
-    object-fit: cover;
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
-            clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%); }
+  padding: 0 1em; }
 
 .tags {
   margin: 0;
@@ -1809,13 +1789,8 @@ input.btnForadmin.btn {
   width: 45px; }
 
 .toggle-view {
-  height: 100%;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-align: end;
-      align-items: flex-end;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   -ms-flex-pack: center;
       justify-content: center;
   font-family: iranyekannormal;
@@ -2008,7 +1983,8 @@ button#go-back {
         transform: rotateZ(-45deg);
     left: 0;
     top: 14px; }
-  button#go-back .title-toggle {
-    font-size: 0.9em; }
+
+.first-page {
+  position: relative; }
 
 /*# sourceMappingURL=style.css.map*/
