@@ -288,7 +288,7 @@ io.on('connection', function(socket) {
 });
 	function startApp(isSuccess) {
 		if (isSuccess) {
-			server.listen(config.web_port, function() {
+			server.listen(config.web_port, '127.0.0.1', function() {
 				console.log('Server started ' + config.web_port + ' at ' +
 					(new Date().toLocaleString().substr(0, 24)));
 				console.log(moment().format('jYYYY/jM/jD HH:mm:ss')); // 1392/6/31 23:59:59

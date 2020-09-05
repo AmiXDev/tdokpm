@@ -20788,54 +20788,25 @@ minimizeIcon.addEventListener('click', function () {
 
 // web sharing API
 
-// const sharingButton = window.document.querySelector('.navbar-bottom-blog-items').firstElementChild;
-// console.log(sharingButton)
-// const pageUrl = window.document.location.href;
-// const pageTitle = window.document.title;
-// const image = window.document.querySelector('.featured-image').src;
+var sharingButton = document.querySelector('.navbar-bottom-blog-items').firstElementChild;
+console.log(sharingButton);
+var pageUrl = window.document.location.href;
+var pageTitle = window.document.title;
+var image = window.document.querySelector('.featured-image').src;
 
-// const shareData = {
-// 	title: pageTitle,
-// 	url:  pageUrl
-// }
+var shareData = {
+	title: pageTitle,
+	url: pageUrl
 
-//   const btn = document.querySelector('button');
+	// Must be triggered some kind of "user activation"
 
-//   btn.addEventListener('click', () => {
-// 	navigator.share(shareData)
-// 	  .then(() =>
-// 		console.log('MDN shared successfully')
-// 	  )
-// 	  .catch((e) =>
-// 		console.log('Error: ' + e)
-// 	  )
-//   });
-
-// const click = document.querySelector('.clicking');
-
-// $(document)('click', '.clicking', () => {
-// 	console.log('clicked');
-// })
-
-// var ctx = document.getElementById('chart-preview').getContext('2d');
-// var chart = new Chart(ctx, {
-//     // The type of chart we want to create
-//     type: 'line',
-
-//     // The data for our dataset
-//     data: {
-//         labels: '#{resultArrayForDate}',
-//         datasets: [{
-//             label: 'قیمت حواله دلار زنده',
-//             backgroundColor: 'rgb(255, 99, 132)',
-//             borderColor: 'rgb(255, 99, 132)',
-//             data: '#{resultArrayForDollar}'
-//         }]
-//     },
-
-//     // Configuration options go here
-//     options: {}
-// });
+};sharingButton.addEventListener('click', function () {
+	navigator.share(shareData).then(function () {
+		return console.log('MDN shared successfully');
+	}).catch(function (e) {
+		return console.log('Error: ' + e);
+	});
+});
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(48)))
 
 /***/ })
