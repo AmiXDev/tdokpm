@@ -20836,6 +20836,21 @@ minimizeIcon.addEventListener('click', function () {
 //     // Configuration options go here
 //     options: {}
 // });
+
+
+// auto height //
+
+(0, _jquery2.default)(".inner-card--text").hover(function () {
+
+	x = (0, _jquery2.default)(this).find(".text-description").height();
+	(0, _jquery2.default)(this).parent('.wrapper').css({
+		'height': x + 'px'
+	});
+}, function () {
+	(0, _jquery2.default)(this).parent('.wrapper').css({
+		'height': 'auto'
+	});
+});
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(48)))
 
 /***/ })

@@ -6,16 +6,28 @@ block navbarTop
 					.toggles
 						.toggle-icon
 block content
-	#wrapper-container
-		#header-chart
-			#today-date
-				.today-day #{h.moment().locale('fa').format('DD')}
-				div
-					.today-month #{h.moment().locale('fa').format('MMMM')}
-					.today-year #{h.moment().locale('fa').format('YYYY')}
+
+	.wrapper.wrapper-position
+		.card--picture
+			img(src="./images/photos/round-pic.jpg", alt="google-ads", width="300", height="200")
+			
+		.inner-wrapper.card--text
+			.inner-card--text
+				h1.header تبلیغات در گوگل
+				p.text-description 
+					| ورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است			
+	.wrapper.wrapper-video
+		h2 معرفی اپلیکیشن
+		video(controls)
+			source(src="./video/intro.mp4")
+			source(src="./video/intro.ogg")
+	.wrapper.wrapper-off-banner
+		h2 تخفیف ویژه اپلیکیشنی ها
+		a(href="https://google.com")
+			img(src="./images/photos/off-banner2.png", alt="off")
+	#chart-container
+		canvas#chart-preview(width=320, height=400)
 			div قیمت لحظه ای دلار حواله #{usdLive}
-		#chart-container
-			canvas#chart-preview(width=320, height=400)
 	//- #{_html}
 	//- div #{resultArrayForDollar}
 	//- div #{resultArrayForDate}

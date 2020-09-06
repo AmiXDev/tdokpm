@@ -403,3 +403,18 @@ minimizeIcon.addEventListener('click', () => {
 //     // Configuration options go here
 //     options: {}
 // });
+
+
+// auto height //
+
+$(".inner-card--text").hover(function() {
+   
+    x = $(this).find(".text-description").height();
+$(this).parent('.wrapper').css({
+    'height': x + 'px'
+   });
+ }, function() {
+  $(this).parent('.wrapper').css({
+    'height': 'auto'
+  });
+});
