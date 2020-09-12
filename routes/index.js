@@ -5,7 +5,7 @@ const blogController = require('../controllers/blogController');
 const { catchErrors } = require('../handlers/errorHandlers');
 
 // Do work here
-router.get('/', indexController.homePage);
+router.get('/',  catchErrors(indexController.homePage));
 router.get('/blog', catchErrors(blogController.blogPost));
 
 
