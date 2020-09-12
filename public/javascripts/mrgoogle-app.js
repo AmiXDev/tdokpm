@@ -2,6 +2,8 @@ import '../sass/style.scss';
 import $ from 'jquery';
 window.jQuery = $; window.$ = $;
 import Slideout from './modules/slideout';
+import Swiper from './modules/swiper.min';
+import moment from 'jalali-moment'
 import "@babel/polyfill";
 
 
@@ -96,6 +98,21 @@ slideout.on('close', function() {
 	translatedBottomNavbar.style.transition = '';
 	translatedBottomNavbar.style.borderRight = '';
 	translatedBottomNavbar.style.boxShadow = '';
+});
+
+
+/* swiper Slider */
+
+var mySwiper = new Swiper('.swiper-container', {
+	slidesPerView: 'auto',
+	spaceBetween: 10,
+	centeredSlides: true,
+	direction: 'horizontal',
+	loop: false,
+	nextButton: false,
+	prevButton: false,
+	watchSlidesProgress: true
+	
 });
 
 
@@ -345,12 +362,13 @@ minimizeIcon.addEventListener('click', () => {
 
 
 // moment-js- jalaali //
+const dateInJalaali = document.querySelectorAll('.createdDate');
 
-(function($){
-	moment.locale('fa'); 
-	$(".createdDate").text(moment().locale('fa').format('dddd jDD jMMMM jYY'));
-	$(".createdDate").removeClass('hidden');
-})(jQuery);
+dateInJalaali.forEach( function (eachDate) {
+	const dateInText = eachDate.textContent;
+
+	eachDate.innerText = moment.from(`${dateInText}`, 'YYYY-M-D HH:mm').locale('fa').fromNow();
+})
 
 
 // web sharing API

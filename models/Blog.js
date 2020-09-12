@@ -2,9 +2,8 @@ const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 const slug = require('slugs');
 
-
-
 const blogSchema = new mongoose.Schema({
+
 	title: {
 		type: String,
 		trim: true,
@@ -61,7 +60,6 @@ blogSchema.virtual('admins', {
 	localField: 'authors',
 	foreignField: '_id'
 });
-
 
 
 const Blog = mongoose.model('Blog', blogSchema)

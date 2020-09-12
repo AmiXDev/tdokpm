@@ -137,3 +137,10 @@ exports.onlineChat = [
 	{ icon: 'at', class: 'emailInput', type: 'email', label: 'پست الکترونیکی', },
 	{ icon: 'phone', class: 'phoneInput', type: 'text', label: 'شماره تماس', },
 ];
+
+exports.googleAdsPlans = [
+	{ icon: 'low-battery', title: 'بسته ۲۰ دلاری', subTitle: '۲۵۶۵۰۰ تومان', labelBtn: 'اطلاعات بیشتر', linkBtn: '#', off:'۲۵٪ تخفیف', },
+	{ icon: 'half-battery', title: 'بسته ۱۰۰ دلاری', subTitle: `۳۵۶۴۰۰ تومان`, labelBtn: 'اطلاعات بیشتر',  linkBtn: '#', off:'۱۰٪ تخفیف', },
+	{ icon: 'half-battery-2', title: 'بسته ۲۰۰ دلاری', subTitle: '۴۵۶۷۰۰۰ تومان', labelBtn: 'اطلاعات بیشتر',  linkBtn: '#', off:'۱۵٪ تخفیف', },
+	{ icon: 'full-battery', title: 'بسته ۳۰۰ دلاری', subTitle: '۷۵۹۸۰۰۰ تومان', labelBtn: 'اطلاعات بیشتر',  linkBtn: '#', off:'۱۵٪ تخفیف', },
+];

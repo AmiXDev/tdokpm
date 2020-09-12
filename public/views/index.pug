@@ -10,7 +10,6 @@ block content
 	.wrapper.wrapper-position
 		.card--picture
 			img(src="./images/photos/round-pic.jpg", alt="google-ads", width="300", height="200")
-			
 		.inner-wrapper.card--text
 			.inner-card--text
 				h1.header تبلیغات در گوگل
@@ -28,6 +27,37 @@ block content
 	#chart-container
 		canvas#chart-preview(width=320, height=400)
 			div قیمت لحظه ای دلار حواله #{usdLive}
+	.wrapper.table-service
+		h2 شارژ تبلیغات در گوگل
+		ul
+			each item in h.googleAdsPlans
+				li
+					!= h.icon(item.icon)
+					.item-group
+						h3 #{item.title}
+						h4 #{item.subTitle}
+					.item-gorup
+						a(href=`${item.linkBtn}`)
+							span #{item.labelBtn}
+						span #{item.off}
+			a(href="#") مشاهده بیشتر
+	.wrapper.wrapper-off-banner
+		h2 ثبت نام کن
+		a(href="https://google.com")
+			img(src="./images/photos/off-banner2.png", alt="off")
+	.wrapper.swiper-container
+		h2 آخرین مقالات مسترگوگل
+		.swiper-wrapper
+			each blogPost in blogPosts
+				if blogPost.draftMode === false
+					.swiper-slide
+						.gradient-shadow
+						img(src=`${blogPost.thumbnailPhotoLocation}`, alt=`${blogPost.thumbnailImageAlt}`, width='500', height='auto')
+						a(href=`/blog/${blogPost.slug}`) #{blogPost.title}
+						.article-details
+							img.single-author-gravatar(src=`${blogPost.authors.gravatar}`, alt=`${blogPost.authors.fullName}`)
+							.single-author-name #{blogPost.authors.fullName}
+							.createdDate.single-createdDate #{blogPost.createdAt}
 	//- #{_html}
 	//- div #{resultArrayForDollar}
 	//- div #{resultArrayForDate}

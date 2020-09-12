@@ -31,7 +31,7 @@ const AdminSchema = mongoose.Schema({
 
 AdminSchema.virtual('gravatar').get(function() {
 	const hash = md5(this.email);
-	return `https://gravatar.com/avatar/${hash}?s=50`;
+	return `https://gravatar.com/avatar/${hash}?s=150`;
 })
 
 const Admin = mongoose.model('Admin', AdminSchema)

@@ -1,13 +1,14 @@
 const request = require('request-promise');
 const cheerio = require('cheerio');
 const mongoose = require('mongoose');
+const Blog = mongoose.model('Blog');
+const Admin = mongoose.model('Admin');
 const MongoClient = require('mongodb').MongoClient;
 const momentJalali = require('moment-jalaali');
 const dbFunctions = require('../dbStore/dbFunctions');
 const assert = require('assert');
 var result = [1,6,7];
 var Chart = require('chart.js');
-const Dollar = require('../models/Dollar');
 const moment = require('moment-timezone');
 
 exports.homePage = (req, res) => {
@@ -89,9 +90,10 @@ exports.homePage = (req, res) => {
 				 assert.equal(null, err);
 				 resultArrayForDollar.push(data.number);
 				 resultArrayForDate.push(data.date);
-			 }, function() {
+			 }, async function() {
 				 db.close();
-				 res.render('index', { title: 'شارژ اکانت گوگل ادوردز در 15 دقیقه با کم ترین تعرفه', usdLive, ManagementPlan, resultArrayForDollar, resultArrayForDate});
+				 const blogPosts = await Blog.find().populate('authors fullName');
+				 res.render('index', { title: 'شارژ اکانت گوگل ادوردز در 15 دقیقه با کم ترین تعرفه', usdLive, ManagementPlan, resultArrayForDollar, resultArrayForDate, blogPosts });
 			 });
 		});
 	});
