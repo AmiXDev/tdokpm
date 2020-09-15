@@ -23,7 +23,7 @@ var timeout = undefined; //Timeout to monitor typing
 var socket = io(); //io socket
 //$newUser.loop = true;
 $usernameInput.focus();
-Notification.requestPermission();
+//Notification.requestPermission();
 
 socket.on('login', function(data) {
 	$userList.empty();

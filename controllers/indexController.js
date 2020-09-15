@@ -7,7 +7,7 @@ const MongoClient = require('mongodb').MongoClient;
 const momentJalali = require('moment-jalaali');
 const dbFunctions = require('../dbStore/dbFunctions');
 const assert = require('assert');
-var result = [1,6,7];
+const result = [46, 35, 34];
 var Chart = require('chart.js');
 const moment = require('moment-timezone');
 
@@ -41,6 +41,8 @@ exports.homePage = (req, res) => {
 			}
 		});
 	}, the_interval);
+
+	
 	const usdLivePriceUrl = 'https://topadvert.net/dollar/index.php';
 	var usdLive;
 
@@ -80,6 +82,10 @@ exports.homePage = (req, res) => {
 		//var dollarChart = [];
 
 
+		// ChartJs
+
+
+
 		var resultArrayForDollar = [];
 		var resultArrayForDate = [];
 
@@ -92,6 +98,7 @@ exports.homePage = (req, res) => {
 				 resultArrayForDate.push(data.date);
 			 }, async function() {
 				 db.close();
+
 				 const blogPosts = await Blog.find().populate('authors fullName');
 				 res.render('index', { title: 'شارژ اکانت گوگل ادوردز در 15 دقیقه با کم ترین تعرفه', usdLive, ManagementPlan, resultArrayForDollar, resultArrayForDate, blogPosts });
 			 });

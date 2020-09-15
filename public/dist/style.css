@@ -835,9 +835,6 @@ button {
     /* ugh */
     background-clip: padding-box; }
 
-.hidden {
-  display: none !important; }
-
 #panel section.preview-blog-post:first-of-type {
   margin-top: 1em; }
 

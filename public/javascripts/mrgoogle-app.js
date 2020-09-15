@@ -371,30 +371,27 @@ dateInJalaali.forEach( function (eachDate) {
 })
 
 
-// web sharing API
+const pageUrl = window.document.location.href;
+const pageTitle = window.document.title;
+const image = window.document.querySelector('.featured-image').src;
+const btn = document.querySelector('body > nav.navbar-bottom-container > ul > li:nth-child(1)');
 
-// const sharingButton = window.document.querySelector('.navbar-bottom-blog-items').firstElementChild;
-// console.log(sharingButton)
-// const pageUrl = window.document.location.href;
-// const pageTitle = window.document.title;
-// const image = window.document.querySelector('.featured-image').src;
 
-// const shareData = {
-// 	title: pageTitle,
-// 	url:  pageUrl
-// }
+const shareData = {
+	title: pageTitle,
+	url:  pageUrl
+}
 
-//   const btn = document.querySelector('button');
 
-//   btn.addEventListener('click', () => {
-// 	navigator.share(shareData)
-// 	  .then(() =>
-// 		console.log('MDN shared successfully')
-// 	  )
-// 	  .catch((e) =>
-// 		console.log('Error: ' + e)
-// 	  )
-//   });
+  btn.addEventListener('click', () => {
+	navigator.share(shareData)
+	  .then(() =>
+		console.log('MDN shared successfully')
+	  )
+	  .catch((e) =>
+		console.log('Error: ' + e)
+	  )
+  });
 
 // const click = document.querySelector('.clicking');
 

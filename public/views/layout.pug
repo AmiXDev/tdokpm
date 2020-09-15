@@ -13,11 +13,9 @@ html
 				.toggle-view
 					.toggles
 						.toggle-icon
-					.title-toggle فهرست
 			button#go-back(type=button, onClick=`window.history.back()`)
 				.go-back-icon
 					.inner-go-back-icon
-				.title-toggle بازگشت
 	block slideOutMenu
 		nav.menu-slideout#menu.slideout-menu.slideout-menu-right
 			ul.menu-slideout-unordered-list
@@ -110,8 +108,7 @@ html
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.2.0/socket.io.js")
 		script(src="/dist/App.bundle.js")
 		script(src="https://unpkg.com/swiper/swiper-bundle.min.js")
-		script(src="https://momentjs.com/downloads/moment-with-locales.min.js")
-		script(src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js")
+		//-script(src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js")
 		script(src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.7.0")
 		script.
 			
@@ -125,7 +122,14 @@ html
 				//const string = /[^,]+/g.exec(response)
 				//var regex = response.replace(/[^,]+/g, "'$&'");
 		
+			function ChartJsPreview() {
+
 			var ctx = document.getElementById('chart-preview').getContext('2d');
+
+			if (!ctx) {
+				return false;
+			}
+
 			const gradient = ctx.createLinearGradient(0, 0, 0, 400);
 			gradient.addColorStop(0, 'rgba(84,145,237,0.5)');
 			gradient.addColorStop(0, 'rgba(84,145,237,0.5)');
@@ -273,3 +277,4 @@ html
 					}
 				}
 			});
+			}
