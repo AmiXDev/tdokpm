@@ -118,7 +118,6 @@ const options = {
     },
 };
 
-
 module.exports = {
     options,
     resource: Blog,
