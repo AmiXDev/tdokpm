@@ -383,15 +383,15 @@ const shareData = {
 }
 
 
-  btn.addEventListener('click', () => {
-	navigator.share(shareData)
-	  .then(() =>
-		console.log('MDN shared successfully')
-	  )
-	  .catch((e) =>
-		console.log('Error: ' + e)
-	  )
-  });
+btn.addEventListener('click', () => {
+navigator.share(shareData)
+	.then(() =>
+	console.log('MDN shared successfully')
+	)
+	.catch((e) =>
+	console.log('Error: ' + e)
+	)
+});
 
 // const click = document.querySelector('.clicking');
 

@@ -45,21 +45,13 @@ const options = {
                         createFirstRecord: 'افزودن اولین مقاله',
                     },
                     properties: {
-                        thumbnailPhotoLocation: 'آدرس عکس کوچک',
-                        thumbnailImageAlt: 'متن جایگزین عکس کوچک',
-                        uploadThumbnailImage: 'عکس کوچک',
                         title: 'عنوان',
                         slug: 'لینک مقاله',
                         description: 'توضیحات',
-                        thumbnailImg: 'عکس شاخص',
-                        coverImg: 'عکس مقاله',
                         tags: 'تگها',
                         keywords: 'کلمات کلیدی',
                         updatedAt: 'تاریخ بروزرسانی',
                         createdAt: 'تاریخ انتشار',
-                        uploadFeaturedImage: 'عکس شاخص',
-                        featuredPhotoLocation: 'آدرس عکس شاخص',
-                        featuredImageAlt: 'متن جایگزین عکس شاخص',
                         draftMode: 'حالت پیش نویس'
                     },
                     actions: {
@@ -82,7 +74,7 @@ const options = {
                     },
                     labels: {
                         filters: 'فیلتر مقالات',
-                    }
+                    },
                 },
                 User: {
                     buttons: {
@@ -179,7 +171,7 @@ const options = {
           '/admin-styles/custom-admin.css',
           '/admin-styles/fonts.css',
         ]
-    },	
+    },
       rootPath: '/admin',
         branding: {
             softwareBrothers: false,
@@ -188,7 +180,7 @@ const options = {
         theme: {
             
             }
-        }
+        },
 };
 
 module.exports = options;

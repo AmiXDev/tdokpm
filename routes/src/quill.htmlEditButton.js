@@ -1,4 +1,7 @@
+import Quill from 'quill'
+
 var style = document.createElement('style');
+
 style.innerHTML = `
 .ql-html-overlayContainer {
   background: #0000007d;

@@ -2,8 +2,9 @@ const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 const slug = require('slugs');
 
-const blogSchema = new mongoose.Schema({
 
+
+const blogSchema = new mongoose.Schema({
 	title: {
 		type: String,
 		trim: true,
@@ -17,21 +18,6 @@ const blogSchema = new mongoose.Schema({
 	description: {
 		type: String,
 		required: 'توضیحات مربوط به مقاله را وارد کنید.'
-	},
-	thumbnailPhotoLocation: {
-		type: String
-
-	},
-	thumbnailImageAlt: {
-		type: String,
-		required: 'متن جایگزین عکس کوچک را فراموش کردید'
-	},
-	featuredPhotoLocation: {
-		type: String
-	},
-	featuredImageAlt: {
-		type: String,
-		required: 'متن جایگزین عکس شاخص را فراموش کردید'
 	},
 	category: [{
 		type: mongoose.Schema.Types.ObjectId,
@@ -52,7 +38,14 @@ const blogSchema = new mongoose.Schema({
 		type: Boolean,
 		default: false
 	},
+	path: String,
+	type: String,
+	size: Number,
+	folder: String,
+	filename: String
 }, { timestamps: true });
+
+
 
 
 blogSchema.virtual('admins', {
@@ -60,6 +53,7 @@ blogSchema.virtual('admins', {
 	localField: 'authors',
 	foreignField: '_id'
 });
+
 
 
 const Blog = mongoose.model('Blog', blogSchema)

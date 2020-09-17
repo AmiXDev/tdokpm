@@ -5,6 +5,8 @@ const md5 = require('md5');
 
 mongoose.connect(process.env.DATABASE, { useNewUrlParser: true });
 
+
+
 //Admin schema
 const AdminSchema = mongoose.Schema({
 	fullName: {
@@ -27,6 +29,8 @@ const AdminSchema = mongoose.Schema({
 		required: true
 	}
 });
+
+
 
 
 AdminSchema.virtual('gravatar').get(function() {
