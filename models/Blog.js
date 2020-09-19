@@ -19,6 +19,21 @@ const blogSchema = new mongoose.Schema({
 		type: String,
 		required: 'توضیحات مربوط به مقاله را وارد کنید.'
 	},
+	thumbnailPhotoLocation: {
+		type: String
+
+	},
+	thumbnailImageAlt: {
+		type: String,
+		required: 'متن جایگزین عکس کوچک را فراموش کردید'
+	},
+	featuredPhotoLocation: {
+		type: String
+	},
+	featuredImageAlt: {
+		type: String,
+		required: 'متن جایگزین عکس شاخص را فراموش کردید'
+	},
 	category: [{
 		type: mongoose.Schema.Types.ObjectId,
 		ref: 'Category',
@@ -38,14 +53,7 @@ const blogSchema = new mongoose.Schema({
 		type: Boolean,
 		default: false
 	},
-	path: String,
-	type: String,
-	size: Number,
-	folder: String,
-	filename: String
 }, { timestamps: true });
-
-
 
 
 blogSchema.virtual('admins', {

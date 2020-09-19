@@ -54,7 +54,7 @@ require('./models/Admin');
 // Start our app!
 var app = require('./app');
 var server = require('http').Server(app)
-var io = require('socket.io')(server);
+var io = require('socket.io')();
 
 var admins = {};
 var users = {};

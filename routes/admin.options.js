@@ -1,5 +1,5 @@
 const { default: AdminBro } = require('admin-bro');
-const AdminBroMongoose = require('admin-bro-mongoose');
+const AdminBroMongoose = require('@admin-bro/mongoose');
 AdminBro.registerAdapter(AdminBroMongoose);
 
 const BlogCompany = require('./companies/company.blog');

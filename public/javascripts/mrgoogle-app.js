@@ -373,7 +373,6 @@ dateInJalaali.forEach( function (eachDate) {
 
 const pageUrl = window.document.location.href;
 const pageTitle = window.document.title;
-const image = window.document.querySelector('.featured-image').src;
 const btn = document.querySelector('body > nav.navbar-bottom-container > ul > li:nth-child(1)');
 
 
@@ -422,14 +421,14 @@ navigator.share(shareData)
 
 // auto height //
 
-$(".inner-card--text").hover(function() {
+// $(".inner-card--text").hover(function() {
    
-    x = $(this).find(".text-description").height();
-$(this).parent('.wrapper').css({
-    'height': x + 'px'
-   });
- }, function() {
-  $(this).parent('.wrapper').css({
-    'height': 'auto'
-  });
-});
+//     x = $(this).find(".text-description").height();
+// $(this).parent('.wrapper').css({
+//     'height': x + 'px'
+//    });
+//  }, function() {
+//   $(this).parent('.wrapper').css({
+//     'height': 'auto'
+//   });
+// });

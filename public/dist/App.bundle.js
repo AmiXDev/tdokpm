@@ -43098,7 +43098,6 @@ dateInJalaali.forEach(function (eachDate) {
 
 var pageUrl = window.document.location.href;
 var pageTitle = window.document.title;
-var image = window.document.querySelector('.featured-image').src;
 var btn = document.querySelector('body > nav.navbar-bottom-container > ul > li:nth-child(1)');
 
 var shareData = {
@@ -43143,17 +43142,17 @@ btn.addEventListener('click', function () {
 
 // auto height //
 
-(0, _jquery2.default)(".inner-card--text").hover(function () {
+// $(".inner-card--text").hover(function() {
 
-	x = (0, _jquery2.default)(this).find(".text-description").height();
-	(0, _jquery2.default)(this).parent('.wrapper').css({
-		'height': x + 'px'
-	});
-}, function () {
-	(0, _jquery2.default)(this).parent('.wrapper').css({
-		'height': 'auto'
-	});
-});
+//     x = $(this).find(".text-description").height();
+// $(this).parent('.wrapper').css({
+//     'height': x + 'px'
+//    });
+//  }, function() {
+//   $(this).parent('.wrapper').css({
+//     'height': 'auto'
+//   });
+// });
 
 /***/ }),
 /* 449 */
