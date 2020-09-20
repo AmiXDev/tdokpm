@@ -6,7 +6,6 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 
-
 const { Admin } = require('../models/Admin');
 /**
  * 
